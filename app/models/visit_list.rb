@@ -1,0 +1,2 @@
+class VisitList < ApplicationRecord
+end

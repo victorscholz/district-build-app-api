@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_09_24_192027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
+  enable_extension "postgis_topology"
+
+  create_table "buildings", force: :cascade do |t|
+    t.string "borough"
+    t.string "address"
+    t.string "construction_date"
+    t.string "architect"
+    t.string "developer"
+    t.string "style"
+    t.string "material_1"
+    t.string "material_2"
+    t.string "use_type"
+    t.string "build_type"
+    t.string "notes"
+    t.string "historical_district"
+    t.geography "building_lonlat", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_lonlat"], name: "index_buildings_on_building_lonlat", using: :gist
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "bio"
+    t.string "avatar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "visit_lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "building_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

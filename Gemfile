@@ -40,8 +40,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# auth
 gem "jwt"
-
 gem "active_model_serializers"
-
 gem "faker"
+
+# geo location
+gem 'activerecord-postgis-adapter'
+gem 'activerecord'
+gem 'datamapper'
+gem 'do_postgres'
+gem 'sequel'
+gem 'activerecord-import'

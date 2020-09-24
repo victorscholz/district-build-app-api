@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  borough: MyString
+  address: MyString
+  construction_date: MyString
+  architect: MyString
+  developer: MyString
+  style: MyString
+  material_1: MyString
+  material_2: MyString
+  use_type: MyString
+  build_type: MyString
+  notes: MyString
+  historical_district: MyString
+  building_lonlat: 
+
+two:
+  borough: MyString
+  address: MyString
+  construction_date: MyString
+  architect: MyString
+  developer: MyString
+  style: MyString
+  material_1: MyString
+  material_2: MyString
+  use_type: MyString
+  build_type: MyString
+  notes: MyString
+  historical_district: MyString
+  building_lonlat: 

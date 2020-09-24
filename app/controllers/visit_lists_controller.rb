@@ -1,0 +1,2 @@
+class VisitListsController < ApplicationController
+end

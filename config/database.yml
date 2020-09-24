@@ -15,16 +15,19 @@
 # gem 'pg'
 #
 default: &default
-    adapter: postgresql
+    adapter: postgis
     encoding: unicode
     # For details on connection pooling, see Rails configuration guide
     # https://guides.rubyonrails.org/configuring.html#database-pooling
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    schema_search_path: public, postgis
 
 development:
     <<: *default
-    database: district_build_app_api
+    adapter: postgis
+    database: victorscholz
     host: localhost
+    port: 5433
     username: <%= ENV['POSTGRES_USERNAME'] %>
     password: <%= ENV['POSTGRES_PASSWORD'] %>
 
@@ -61,8 +64,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
     <<: *default
-    database: district_build_app_api
+    database: victorscholz
     host: localhost
+    port: 5433
     username: <%= ENV['POSTGRES_USERNAME'] %>
     password: <%= ENV['POSTGRES_PASSWORD'] %>
 
