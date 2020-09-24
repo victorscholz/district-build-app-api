@@ -1,6 +1,6 @@
 class CreateBuildings < ActiveRecord::Migration[6.0]
   def change
-    enable_extension "postgis"
+    enable_extension 'postgis'
     create_table :buildings do |t|
       t.string :borough
       t.string :address

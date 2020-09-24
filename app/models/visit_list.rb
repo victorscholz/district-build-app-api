@@ -1,2 +1,1 @@
-class VisitList < ApplicationRecord
-end
+class VisitList < ApplicationRecord; end

@@ -1,2 +1,1 @@
-class BuildingsController < ApplicationController
-end
+class BuildingsController < ApplicationController; end

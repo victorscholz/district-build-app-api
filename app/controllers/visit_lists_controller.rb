@@ -1,2 +1,1 @@
-class VisitListsController < ApplicationController
-end
+class VisitListsController < ApplicationController; end
