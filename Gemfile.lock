@@ -79,6 +79,7 @@ GEM
       activesupport
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    csv (3.0.4)
     data_objects (0.10.17)
       addressable (~> 2.1)
     datamapper (1.2.0)
@@ -231,6 +232,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
+  csv
   datamapper
   do_postgres
   faker

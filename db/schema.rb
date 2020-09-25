@@ -17,22 +17,22 @@ ActiveRecord::Schema.define(version: 2020_09_24_192027) do
   enable_extension "postgis"
 
   create_table "buildings", force: :cascade do |t|
+    t.geography "coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.string "borough"
-    t.string "address"
-    t.string "construction_date"
-    t.string "architect"
-    t.string "developer"
-    t.string "style"
-    t.string "material_1"
-    t.string "material_2"
-    t.string "use_type"
+    t.string "des_addres"
+    t.string "date_combo"
+    t.string "arch_build"
+    t.string "own_devel"
+    t.string "style_prim"
+    t.string "mat_sec"
+    t.string "mat_prim"
+    t.string "mat_third"
+    t.string "use_orig"
     t.string "build_type"
-    t.string "notes"
-    t.string "historical_district"
-    t.geography "building_lonlat", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.string "hist_dist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["building_lonlat"], name: "index_buildings_on_building_lonlat", using: :gist
+    t.index ["coordinates"], name: "index_buildings_on_coordinates", using: :gist
   end
 
   create_table "users", force: :cascade do |t|
