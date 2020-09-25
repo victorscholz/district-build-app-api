@@ -53,3 +53,6 @@ gem 'do_postgres'
 gem 'sequel'
 gem 'activerecord-import'
 gem 'csv'
+
+# API
+gem 'soda-ruby', :require => 'soda'
