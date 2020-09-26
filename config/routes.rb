@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	get '/poop', to: 'sodas#index'
 	resources :buildings
 	resources :visit_lists
 	resources :users

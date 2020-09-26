@@ -55,4 +55,8 @@ gem 'activerecord-import'
 gem 'csv'
 
 # API
-gem 'soda-ruby', :require => 'soda'
+gem 'soda-ruby', require: 'soda'
+gem 'json'
+
+# pry
+gem 'pry'
