@@ -57,6 +57,7 @@ gem 'csv'
 # API
 gem 'soda-ruby', require: 'soda'
 gem 'json'
+gem 'dotenv-rails'
 
 # pry
 gem 'pry'
