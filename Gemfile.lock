@@ -253,6 +253,7 @@ DEPENDENCIES
   do_postgres
   dotenv-rails
   faker
+  hashie
   json
   jwt
   listen (~> 3.2)

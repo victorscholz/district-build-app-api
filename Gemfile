@@ -61,3 +61,6 @@ gem 'dotenv-rails'
 
 # pry
 gem 'pry'
+
+# hashie mash
+gem 'hashie'

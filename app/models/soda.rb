@@ -6,12 +6,19 @@ module Soda
 	def self.run
 		client =
 			SODA::Client.new(
-				{ domain: 'data.cityofnewyork.us', app_token: 'slack' }
+				{
+					domain: 'data.cityofnewyork.us',
+					app_token: 'slack'
+				}
 			)
 
-		results = client.get('x3ar-yjn2', { '$where' => "borough == 'BK'" })
+		results = client.get('x3ar-yjn2', { '$where' => "borough == 'SI'" })
 
 		"Got #{results.length} results. Dumping first results:"
+
+		results.extend Hashie::Extensions::DeepFetch
+		# results.deep_fetch :the_geom[0], :coordinates, 1
+
 		byebug
 		# hashie array
 		# .body gives access
