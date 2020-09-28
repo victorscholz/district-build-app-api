@@ -6,10 +6,7 @@ module Soda
 	def self.run
 		client =
 			SODA::Client.new(
-				{
-					domain: 'data.cityofnewyork.us',
-					app_token: 'slack'
-				}
+				{ domain: 'data.cityofnewyork.us', app_token: 'slack' }
 			)
 
 		results = client.get('x3ar-yjn2', { '$where' => "borough == 'SI'" })
@@ -22,6 +19,6 @@ module Soda
 		byebug
 		# hashie array
 		# .body gives access
-		# poop = results.map { |k, v| "#{k}: #{v}" }
+		# building = results.map { |k, v| "#{k}: #{v}" }
 	end
 end

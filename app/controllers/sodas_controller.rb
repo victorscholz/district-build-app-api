@@ -4,8 +4,8 @@
 
 class SodasController < ApplicationController
 	def index
-		poop = Soda.run
+		building = Soda.run
 		# byebug
-		# render json: poop
+		# render json: building
 	end
 end
