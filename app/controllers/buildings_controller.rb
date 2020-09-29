@@ -33,18 +33,18 @@ class BuildingsController < ApplicationController
 
 	def building_params
 		params.require(:building).permit(
-			:borough,
-			:des_addres,
-			:date_combo,
-			:arch_build,
-			:own_devel,
-			:style_prim,
-			:mat_sec,
-			:mat_prim,
-			:mat_third,
-			:use_orig,
+			:developer,
 			:build_type,
-			:hist_dist
+			:architect,
+			:style,
+			:primary_material,
+			:secondary_material,
+			:build_date,
+			:original_use,
+			:borough,
+			:historical_district,
+			:address,
+			:coordinates
 		)
 	end
 end

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
 	def show
 		user = find_user
-		render json: { id: user.id, name: user.username }
+		render json: { id: user.id, name: user.username, buildings: user.buildings}
 	end
 
 	def create

@@ -1,16 +1,15 @@
 class BuildingSerializer < ActiveModel::Serializer
 	attributes :id,
-	           :borough,
-	           :address,
-	           :construction_date,
-	           :architect,
 	           :developer,
-	           :style,
-	           :material_1,
-	           :material_2,
-	           :use_type,
 	           :build_type,
-	           :notes,
+	           :architect,
+	           :style,
+	           :primary_material,
+	           :secondary_material,
+	           :build_date,
+	           :original_use,
+	           :borough,
 	           :historical_district,
-	           :building_lonlat
+	           :address,
+	           :coordinates
 end

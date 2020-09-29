@@ -48,15 +48,16 @@ gem 'faker'
 # geo location
 gem 'activerecord-postgis-adapter'
 gem 'activerecord'
-gem 'datamapper'
+# gem 'datamapper'
 gem 'do_postgres'
 gem 'sequel'
 gem 'activerecord-import'
 gem 'csv'
-gem 'rgeo-geojson'
+# gem 'rgeo-geojson'
 
 # API
-gem 'soda-ruby', require: 'soda'
+gem 'rest-client'
+# gem 'soda-ruby', require: 'soda'
 gem 'json'
 gem 'dotenv-rails'
 
@@ -64,4 +65,4 @@ gem 'dotenv-rails'
 gem 'pry'
 
 # hashie mash
-gem 'hashie'
+# gem 'hashie'
