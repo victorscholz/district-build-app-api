@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require_relative '../config/environment'
 require 'rest-client'
 require 'json'
@@ -23,20 +15,42 @@ building_data =
 api_body = building_data.body
 building_info = JSON.parse(api_body)
 
-building_info['features'].each do |building|
+# binding.pry
+building_info.each do |building|
 	Building.create(
 		# coordinates: building['the_geom']['coordinates'][0][0][0..4],
 		borough: building['borough'],
-		address: building['des_addres'],
-		build_date: building['date_combo'],
-		architect: building['arch_build'],
-		developer: building['own_devel'],
-		style: building['style_prim'],
-		secondary_material: building['mat_sec'],
-		primary_material: building['mat_prim'],
-		original_use: building['use_orig'],
+		bin: building['bin'],
+		block: building['block'],
+		lot: building['lot'],
+		des_addres: building['des_addres'],
+		circa: building['circa'],
+		date_low: building['date_low'],
+		date_high: building['date_high'],
+		date_combo: building['date_combo'],
+		alt_date_1: building['alt_date_1'],
+		alt_date_2: building['alt_date_2'],
+		arch_build: building['arch_build'],
+		own_devel: building['own_devel'],
+		alt_arch_1: building['alt_arch_1'],
+		alt_arch_2: building['alt_arch_2'],
+		style_prim: building['style_prim'],
+		style_sec: building['style_sec'],
+		style_oth: building['style_oth'],
+		mat_sec: building['mat_sec'],
+		mat_prim: building['mat_prim'],
+		mat_third: building['mat_third'],
+		mat_four: building['mat_four'],
+		mat_other: building['mat_other'],
+		use_orig: building['use_orig'],
+		use_other: building['use_other'],
 		build_type: building['build_type'],
-		historical_district: building['hist_dist']
+		build_oth: building['build_oth'],
+		notes: building['notes'],
+		build_nme: building['build_nme'],
+		hist_dist: building['hist_dist'],
+		lm_orig: building['lm_orig'],
+		lm_new: building['lm_new']
 	)
 end
 
@@ -47,42 +61,3 @@ VisitList.create(
 )
 
 puts 'Visit List created'
-
-binding.pry
-
-# 10.times do
-# 	VisitList.create(
-# 		user_id: User.all.sample.id, building_id: Building.all.sample.id
-# 	)
-# end
-# client =
-# 	SODA::Client.new({ domain: 'data.cityofnewyork.us', app_token: 'slack' })
-
-# results = client.get('x3ar-yjn2', { '$where' => "borough == 'BK'" })
-
-# puts "Got #{results.length} results. Dumping first results:"
-
-# results.each { |k, v| puts "#{k}: #{v}" }
-
-# fetch data
-# results.each do |f|
-# 	datasets = JSON.parse(f)
-
-# 	puts datasets.inspect
-# 	binding.pry
-# end
-
-# trying to pull data from nyc api to seed building info into back end
-# we are able to iterate through and pull each label/data type
-
-# file_data =
-# 	File.read(
-# 		'/Users/victorscholz/Development/code/mod4/mod4-project/back/district-build-app-api/db/open_data.geojson'
-# 	)
-# puts file_data
-
-# data = RGeo::GeoJSON::Coder.new
-
-# building = data.decode(file_data)
-
-# puts building.to_json

@@ -11,6 +11,7 @@ class VisitListsController < ApplicationController
 
 	def create
 		visit_list = VisitList.create(visit_list_params)
+		# byebug
 		render json: visit_list
 	end
 
