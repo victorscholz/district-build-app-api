@@ -13,6 +13,7 @@ require 'pry'
 
 User.destroy_all
 Building.destroy_all
+VisitList.destroy_all
 
 User.create(username: 'Cody.NYC', password_digest: 'pass')
 puts 'user created'
@@ -24,7 +25,7 @@ building_info = JSON.parse(api_body)
 
 building_info['features'].each do |building|
 	Building.create(
-		coordinates: building['the_geom']['coordinates'][0][0][0..4],
+		# coordinates: building['the_geom']['coordinates'][0][0][0..4],
 		borough: building['borough'],
 		address: building['des_addres'],
 		build_date: building['date_combo'],
@@ -40,6 +41,12 @@ building_info['features'].each do |building|
 end
 
 puts 'buildings created'
+
+VisitList.create(
+	user_id: User.all.sample.id, building_id: Building.all.sample.id
+)
+
+puts 'Visit List created'
 
 binding.pry
 
