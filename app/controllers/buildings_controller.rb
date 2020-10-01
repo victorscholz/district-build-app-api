@@ -21,7 +21,8 @@ class BuildingsController < ApplicationController
 	end
 
 	def destroy
-		building = building.destroy
+		building = find_building
+		Building.destroy(params[:id])
 		render json: building
 	end
 
