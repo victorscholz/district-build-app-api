@@ -15,7 +15,6 @@ building_data =
 api_body = building_data.body
 building_info = JSON.parse(api_body)
 
-# binding.pry
 building_info.each do |building|
 	Building.create(
 		# coordinates: building['the_geom']['coordinates'][0][0][0..4],
