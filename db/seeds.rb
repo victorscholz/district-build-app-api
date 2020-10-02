@@ -10,6 +10,8 @@ VisitList.destroy_all
 User.create(username: 'Cody.NYC', password_digest: 'pass')
 puts 'user created'
 
+binding.pry
+
 building_data =
 	RestClient.get('https://victorscholz.github.io/Data/open_data.geojson')
 api_body = building_data.body
