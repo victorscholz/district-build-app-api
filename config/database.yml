@@ -27,7 +27,7 @@ development:
     adapter: postgis
     database: victorscholz
     host: localhost
-    port: 5433
+    port: 5432
     username: <%= ENV['POSTGRES_USERNAME'] %>
     password: <%= ENV['POSTGRES_PASSWORD'] %>
 
@@ -66,7 +66,7 @@ test:
     <<: *default
     database: victorscholz
     host: localhost
-    port: 5433
+    port: 5432
     username: <%= ENV['POSTGRES_USERNAME'] %>
     password: <%= ENV['POSTGRES_PASSWORD'] %>
 
