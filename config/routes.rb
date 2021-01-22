@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  get 'welcome/index'
+  # root 'welcome#index', page:"index"
+  # get '/index', :to => redirect('index.html')
+  root 'pages#show', page: 'home'
+  get '/pages/:page' => 'pages#show'
   resources :buildings
   resources :visit_lists
   resources :users
