@@ -19,5 +19,5 @@ module Soda
 		# hashie array
 		# .body gives access
 		# building = results.map { |k, v| "#{k}: #{v}" }
-	end
+	# end
 end
