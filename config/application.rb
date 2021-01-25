@@ -34,23 +34,23 @@ module DistrictBuildAppApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    if Rails.env == 'production'
-      require 'rack/allowed_hosts'
-      config.middleware.use Rack::AllowedHosts do
+    # if Rails.env == 'production'
+    #   require 'rack/allowed_hosts'
+    #   config.middleware.use Rack::AllowedHosts do
   
-        # Allow root domain:
-        allow 'https://frozen-dusk-67940.herokuapp.com/'
+    #     # Allow root domain:
+    #     allow 'https://frozen-dusk-67940.herokuapp.com/'
   
-        # Allow our subdomains
-        allow 'https://frozen-dusk-67940.herokuapp.com/buildings/', 'https://frozen-dusk-67940.herokuapp.com/visit_lists/'
+    #     # Allow our subdomains
+    #     allow 'https://frozen-dusk-67940.herokuapp.com/buildings/', 'https://frozen-dusk-67940.herokuapp.com/visit_lists/'
   
-        # Allow any subdomain with a wildcard
-        allow '*https://frozen-dusk-67940.herokuapp.com/'
+    #     # Allow any subdomain with a wildcard
+    #     allow '*https://frozen-dusk-67940.herokuapp.com/'
         
-        # Include subdomain from a configuration variable:
-        # ENV['ALLOWED_HOSTS'] can be a string or an array of strings.
-        allow ENV['ALLOWED_HOSTS']
-      end
-    end
+    #     # Include subdomain from a configuration variable:
+    #     # ENV['ALLOWED_HOSTS'] can be a string or an array of strings.
+    #     allow ENV['ALLOWED_HOSTS']
+    #   end
+    # end
   end
 end
