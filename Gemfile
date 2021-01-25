@@ -66,3 +66,7 @@ gem 'pry'
 
 # hashie mash
 # gem 'hashie'
+
+# rack-allowed_hosts
+# whitelists the hostnames allowed to serve the site
+gem 'rack-allowed_hosts', '~> 0.0.4'
