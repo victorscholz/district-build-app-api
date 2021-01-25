@@ -51,5 +51,6 @@ module DistrictBuildAppApi
         # ENV['ALLOWED_HOSTS'] can be a string or an array of strings.
         allow ENV['ALLOWED_HOSTS']
       end
+    end
   end
 end
