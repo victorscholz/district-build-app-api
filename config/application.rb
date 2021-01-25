@@ -50,5 +50,6 @@ module DistrictBuildAppApi
         # Include subdomain from a configuration variable:
         # ENV['ALLOWED_HOSTS'] can be a string or an array of strings.
         allow ENV['ALLOWED_HOSTS']
+      end
   end
 end
