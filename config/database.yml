@@ -21,7 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   schema_search_path: public, postgis
-  url: <%= ENV.fetch('SOME_OTHER_URL', '').sub(/^postgres/, 'postgis') %>
+  url: <%= ENV.fetch('https://frozen-dusk-67940.herokuapp.com/', '').sub(/^postgres/, 'postgis') %>
 
 development:
   <<: *default
@@ -92,6 +92,6 @@ test:
 production:
   <<: *default
   database: district_build_app_api_production
-  url: <%= ENV.fetch('SOME_OTHER_URL', '').sub(/^postgres/, 'postgis') %>
+  url: <%= ENV.fetch('https://frozen-dusk-67940.herokuapp.com/', '').sub(/^postgres/, 'postgis') %>
   username: district_build_app_api
   password: <%= ENV['DISTRICT_BUILD_APP_API_DATABASE_PASSWORD'] %>
