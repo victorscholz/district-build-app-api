@@ -10,7 +10,7 @@ VisitList.destroy_all
 User.create(username: 'Cody.NYC', password_digest: 'pass')
 puts 'user created'
 
-binding.pry
+# binding.pry
 
 building_data =
 	RestClient.get('https://victorscholz.github.io/Data/open_data.geojson')
@@ -54,7 +54,7 @@ building_info.each do |building|
 		lm_new: building['lm_new']
 	)
 end
-
+binding.pry
 puts 'buildings created'
 
 VisitList.create(
